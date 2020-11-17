@@ -1,0 +1,4 @@
+qr264o_10.3
+
+CREATE TABLE kapcsolat(adoszam int FOREING KEY (adoszam) REFERENCES gyarto(adoszam), tkod int FOREING KEY (tkod) REFERENCES termek(tkod));
+ALTER TABLE termek DROP gyarto;

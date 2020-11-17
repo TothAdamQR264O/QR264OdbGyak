@@ -1,0 +1,5 @@
+qr264o_10.1
+
+ALTER TABLE Alkatresz ADD(ar int);
+
+UPDATE Alkatresz SET akod=akod*1,10 WHERE akod=x; 

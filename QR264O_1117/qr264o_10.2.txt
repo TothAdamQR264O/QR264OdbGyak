@@ -1,0 +1,5 @@
+qr264o_10.2
+
+SELECT tipus FROM tanfolyam WHERE ar(SELECT avg(ar), (SELECT max(ar9) - min(ar)) FROM tanfolyam);
+SELECT nev CASE WHERE ar>100000 THEM `draga` ELSE `olcso` END ar FROM tanfolyam;
+SELECT nev FROM tanfolyam T INNER JOIN befizetes B ON GROUP BY T.tkod=B.kurzu CASE WHERE kurzus>10 THEM `sokan` ELSE `kevesen` END kurzus FROM tanfolyam;

@@ -1,0 +1,3 @@
+qr264o_10.4
+
+ALTER TABLE Termekek ADD(kategoria int);
