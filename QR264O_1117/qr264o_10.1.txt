@@ -1,5 +1,6 @@
 qr264o_10.1
 
 ALTER TABLE Alkatresz ADD(ar int);
-
-UPDATE Alkatresz SET akod=akod*1,10 WHERE akod=x; 
+SELECT nev FROM gyarto G INNER JOIN termek T ON G.adoszam=T.gyarto WHERE gyarto=NULL;
+UPDATE Alkatresz SET akod=akod*1,10 WHERE akod=x;
+SELECT nev FROM termek T INNER JOIN egysegek E ON T.tkod=E.aru WHRE max(db);
