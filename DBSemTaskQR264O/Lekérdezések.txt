@@ -1,0 +1,44 @@
+1:
+SELECT `művész`.`név` Művész,  `alkotások`.`cím` Alkotás  FROM `művész` LEFT JOIN `alkotások` ON `alkotások`.`alkotó` = `művész`.`artID`;
+2:
+SELECT `múzeum`.`név` Múzeum, `alkotások`.`cím` Alkotás FROM `múzeum` LEFT JOIN `tárlat` ON `tárlat`.`Muz` = `múzeum`.`mID` LEFT JOIN `alkotások` ON `tárlat`.`Alk` = `alkotások`.`ID` ;
+3:
+SELECT `múzeum`.`név` AS `Múzeum`, `dolgozók`.`név` AS `Dolgozó`, `dolgozók`.`pozíció` AS `Pozíció` FROM `múzeum` LEFT JOIN `dolgozók` ON `dolgozók`.`munkahely` = `múzeum`.`mID`;
+4:
+SELECT `gyűjtő`.`név` Gyűjző, `alkotások`.`cím` Alkotás, `művész`.`név` Művész FROM `gyűjtő`
+    LEFT JOIN `gyűjtemény` ON `gyűjtemény`.`gyűjtő` = `gyűjtő`.`szemSzám`
+    LEFT JOIN `gyűjtőialkotás` ON `gyűjtőialkotás`.`Gy` = `gyűjtemény`.`GyID`
+    LEFT JOIN `alkotások` ON `gyűjtőialkotás`.`Alk` = `alkotások`.`ID`
+    LEFT JOIN `művész` ON `alkotások`.`alkotó` = `művész`.`artID`;
+5:
+SELECT `dolgozók`.`név` AS `Őr neve`, `múzeum`.`név` AS `Múzeum` FROM `múzeum` LEFT JOIN `dolgozók` ON `dolgozók`.`munkahely` = `múzeum`.`mID` WHERE (`dolgozók`.`pozíció`="őr");
+6:
+SELECT `gyűjtő`.`név` AS `Gyűjtő`, `alkotások`.`cím` AS `Alkotás`, `gyűjtőialkotás`.`eredetiség` AS `Eredetiség`
+FROM `gyűjtő`
+    LEFT JOIN `gyűjtemény` ON `gyűjtemény`.`gyűjtő` = `gyűjtő`.`szemSzám`
+    LEFT JOIN `gyűjtőialkotás` ON `gyűjtőialkotás`.`Gy` = `gyűjtemény`.`GyID`
+    LEFT JOIN `alkotások` ON `gyűjtőialkotás`.`Alk` = `alkotások`.`ID`;
+7:
+SELECT `gyűjtő`.`név` AS `Gyűjtő`, `alkotások`.`cím` AS `Alkotás`
+FROM `gyűjtő`
+    LEFT JOIN `gyűjtemény` ON `gyűjtemény`.`gyűjtő` = `gyűjtő`.`szemSzám`
+    LEFT JOIN `gyűjtőialkotás` ON `gyűjtőialkotás`.`Gy` = `gyűjtemény`.`GyID`
+    LEFT JOIN `alkotások` ON `gyűjtőialkotás`.`Alk` = `alkotások`.`ID`
+WHERE(`gyűjtőialkotás`.`eredetiség`="eredeti");
+8:
+SELECT `múzeum`.`név` AS `Múzeum`, `alkotások`.`cím` AS `Alkotás`
+FROM `múzeum`
+    LEFT JOIN `tárlat` ON `tárlat`.`Muz` = `múzeum`.`mID`
+    LEFT JOIN `alkotások` ON `tárlat`.`Alk` = `alkotások`.`ID`
+WHERE(`tárlat`.`eredetiség`="eredeti");
+9:
+SELECT `alkotások`.`cím` AS `Alkotás`, `alkotások`.`mSzám` AS `Másolatok száma`, `művész`.`név` AS `Művész`
+FROM `művész`
+    LEFT JOIN `alkotások` ON `alkotások`.`alkotó` = `művész`.`artID`
+WHERE (`művész`.`név`="Csontváry Kosztka Tivadar");
+10:
+SELECT `művész`.`név`
+FROM `művész`
+    LEFT JOIN `alkotások` ON `alkotások`.`alkotó` = `művész`.`artID`
+WHERE (`alkotások`.`típus`="szobor") GROUP BY `művész`.`név`;
+
