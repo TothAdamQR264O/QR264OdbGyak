@@ -41,4 +41,6 @@ SELECT `művész`.`név`
 FROM `művész`
     LEFT JOIN `alkotások` ON `alkotások`.`alkotó` = `művész`.`artID`
 WHERE (`alkotások`.`típus`="szobor") GROUP BY `művész`.`név`;
+11:
+SELECT `művész`.`név` AS `Művész`, `művész`.`hÉv`-`művész`.`szÉv` AS `Életkor` FROM művész;
 
