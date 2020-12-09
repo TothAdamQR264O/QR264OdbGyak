@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1607499977 source:c:\users\Ádám\desktop\iskola\codeblock\gyakorlatok\2019-20\probasql\main.c
+	<stdio.h>
+	<stdlib.h>
+	"sqlite3.h"
+
+1460130470 c:\users\Ádám\desktop\iskola\codeblock\gyakorlatok\2019-20\probasql\sqlite3.h
+	<stdarg.h>
+

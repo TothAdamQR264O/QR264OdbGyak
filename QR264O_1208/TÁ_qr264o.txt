@@ -1,0 +1,3 @@
+1. A E-SQL nek grafikus felülete is van, míg a CLI-nek nincs.
+2. Először az sql könyvtárat be msoljuk a programunk mapájába, ajd
+a programban include sqlite3.h parancsal be meghívjuk.
